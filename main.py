@@ -24,7 +24,7 @@ class ADCGen:
 
     def send(self):
         self.ser.write(struct.pack(">H", self._get_y()))
-        self.ser.write(b'\x13\x10')
+        self.ser.write(b'\x0D\x0A')
         threading.Timer(self.time_sec, self.send).start()
 
 
